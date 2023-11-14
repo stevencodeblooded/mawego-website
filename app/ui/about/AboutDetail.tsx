@@ -43,7 +43,12 @@ const AboutDetail = () => {
       <div className="flex items-center my-10">
         <div>
           <h2 className="text-5xl text-sky-400 font-bold mb-3">Our Legacy of Excellence...</h2>
-          <p className="text-sm mb-4">At Mawego, we don't just educate; we ignite creativity and empower our students to push boundaries. Our alumni not only excel academically but also continually contribute groundbreaking ideas and solutions to society. Join us in our mission to foster the next generation of innovators, and be a part of our enduring legacy of excellence.</p>
+          <p className="text-sm mb-4">
+            At Mawego, we don't just educate; we ignite creativity and empower our students to push boundaries.
+            Our alumni not only excel academically but also continually contribute groundbreaking ideas
+            and solutions to society. Join us in our mission to foster the next generation of innovators, 
+            and be a part of our enduring legacy of excellence.
+          </p>
           <div className="flex gap-3">
             <Link href={'/contact'} className="bg-sky-300 py-2 px-3 rounded-sm">
               Join Us
