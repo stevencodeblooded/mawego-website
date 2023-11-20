@@ -11,10 +11,10 @@ export default function Home() {
         <Image src={backgrounImage} fill={true} alt={"Background Image"} />
 
         <div className=" absolute z-10">
-          <h1 className="text-5xl text-gray-100 font-bold mb-3">
+          <h1 className="text-4xl text-gray-100 font-bold mb-3 drop-shadow-2xl lg:text-5xl">
             WELCOME TO MAWEGO INSTITUTE
           </h1>
-          <p className="text-xl p-2 bg-sky-300 text-center">
+          <p className="text-sm font-semibold p-2 bg-sky-300 text-center lg:text-xl">
             CPA FRANCIS OTIENO - MUNICIPAL MANAGER KENDU-BAY MUNICIPALITY <br />{" "}
             DURING WORLD CLEAN-UP DAY ON 16/09/2023
           </p>

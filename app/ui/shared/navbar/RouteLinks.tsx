@@ -2,13 +2,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { IoMenu } from "react-icons/io5";
+import { FaRegWindowClose } from "react-icons/fa";
 
 const RouteLinks = () => {
   const pathname = usePathname();
+  const [showLinksMobile, setShowLinksMobile] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
   const [isCourses, setIsCourses] = useState(false);
   const [isStaff, setIsStaff] = useState(false);
   const [isTender, setIsTender] = useState(false);
+
+  const handleShowingLinksMobile = () => setShowLinksMobile(!showLinksMobile);
 
   //AboutUS
   const handleAboutUs = () => setIsAbout(true);
@@ -28,7 +33,7 @@ const RouteLinks = () => {
 
   return (
     <div>
-      <ul className="flex items-center gap-14 relative">
+      <ul className="items-center gap-14 hidden lg:flex">
         <li>
           <Link
             href="/"
@@ -41,7 +46,8 @@ const RouteLinks = () => {
             Home
           </Link>
         </li>
-        <li>
+
+        <li className="relative">
           <Link
             onMouseEnter={handleAboutUs}
             onMouseLeave={handleOutAboutUs}
@@ -54,8 +60,22 @@ const RouteLinks = () => {
           >
             About Us
           </Link>
+          {
+            isAbout && (
+              <div className="absolute bg-sky-300 w-96 z-20 p-8 rounded-sm" onMouseEnter={handleAboutUs} onMouseLeave={handleOutAboutUs}>
+                <ul className="flex flex-col gap-2">
+                  <li><Link className="hover:underline hover:text-sky-600" href='/about'>About Us</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href='/quality-policy'>Quality Policy Statement</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/Vision'}>Vision Mawego</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/service-delivery'}>Service Delivery Charter</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/careers'}>Careers</Link></li>
+                </ul>
+              </div>
+            )
+          }
         </li>
-        <li>
+
+        <li className="relative">
           <Link
             onMouseEnter={handleCourses}
             onMouseLeave={handleOutCourses}
@@ -68,8 +88,24 @@ const RouteLinks = () => {
           >
             Courses
           </Link>
+          {
+            isCourses && (
+              <div className="absolute bg-sky-300  w-96 z-20 p-8 rounded-sm " onMouseLeave={handleOutCourses} onMouseEnter={handleCourses}>
+                <ul className="flex flex-col gap-2">
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/ict-maths'}>ICT & Maths</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/business'}>Business Studies</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/agriculture'}>Agriculture</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/building'}>Building & Construction</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/electricals'}>Electrical Eng.</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/applied-science'}>Applied Science</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/institutional-management'}>Institutional Management</Link></li>
+                </ul>
+              </div>
+            )
+          }
         </li>
-        <li>
+
+        <li className="relative">
           <Link
             href="/gallery"
             className={`text-sky-600 hover:underline ${
@@ -81,7 +117,8 @@ const RouteLinks = () => {
             Gallery
           </Link>
         </li>
-        <li>
+
+        <li className="relative">
           <Link
             onMouseEnter={handleStaff}
             onMouseLeave={handleOutStaff}
@@ -94,8 +131,19 @@ const RouteLinks = () => {
           >
             Staff
           </Link>
+          {
+            isStaff && (
+              <div className="absolute bg-sky-300 w-96 z-20 p-8 rounded-sm" onMouseEnter={handleStaff} onMouseLeave={handleOutStaff}>
+                <ul className="flex flex-col gap-2">
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/board-members'}>Board Members</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/our-staff'}>Our Staff</Link></li>
+                </ul>
+              </div>
+            )
+          }
         </li>
-        <li>
+
+        <li className="relative">
           <Link
             onMouseEnter={handleTender}
             onMouseLeave={handleOutTender}
@@ -108,7 +156,19 @@ const RouteLinks = () => {
           >
             Tender
           </Link>
+          {
+            isTender && (
+              <div className="absolute bg-sky-300 w-96 z-20 p-8 rounded-sm " onMouseLeave={handleOutTender} onMouseEnter={handleTender}>
+                <ul className="flex flex-col gap-2">
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/tenders'}>FY-2022/2024</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/tenders'}>FY-2021/2022</Link></li>
+                  <li><Link className="hover:underline hover:text-sky-600" href={'/tenders'}>FY-2020/2021</Link></li>
+                </ul>
+              </div>
+            )
+          }
         </li>
+
         <li>
           <Link
             href="/downloads"
@@ -135,59 +195,21 @@ const RouteLinks = () => {
         </li>
       </ul>
 
-      {
-        isAbout && (
-          <div className="absolute bg-sky-300 w-2/5 z-20 p-8" onMouseEnter={handleAboutUs} onMouseLeave={handleOutAboutUs}>
-            <ul className="flex flex-col gap-2">
-              <li><Link href='/about'>About Us</Link></li>
-              <li><Link href='/quality-policy'>Quality Policy Statement</Link></li>
-              <li><Link href={'/Vision'}>Vision Mawego</Link></li>
-              <li><Link href={'/service-delivery'}>Service Delivery Charter</Link></li>
-              <li><Link href={'/careers'}>Careers</Link></li>
-            </ul>
-          </div>
-        )
-      }
-
-      {
-        isStaff && (
-          <div className="absolute bg-sky-300 w-2/5 z-20 p-8" onMouseEnter={handleStaff} onMouseLeave={handleOutStaff}>
-            <ul className="flex flex-col gap-2">
-              <li><Link href={'/board-members'}>Board Members</Link></li>
-              <li><Link href={'/our-staff'}>Our Staff</Link></li>
-            </ul>
-          </div>
-        )
-      }
-
-      {
-        isCourses && (
-          <div className="absolute bg-sky-300 w-2/5 z-20 p-8 " onMouseLeave={handleOutCourses} onMouseEnter={handleCourses}>
-            <ul className="flex flex-col gap-2">
-              <li><Link href={'/ict-maths'}>ICT & Maths</Link></li>
-              <li><Link href={'/business'}>Business Studies</Link></li>
-              <li><Link href={'/agriculture'}>Agriculture</Link></li>
-              <li><Link href={'/building'}>Building & Construction</Link></li>
-              <li><Link href={'/electricals'}>Electrical Eng.</Link></li>
-              <li><Link href={'/applied-science'}>Applied Science</Link></li>
-              <li><Link href={'/institutional-management'}>Institutional Management</Link></li>
-            </ul>
-          </div>
-        )
-      }
-
-      {
-        isTender && (
-          <div className="absolute  bg-sky-300 w-2/5 z-20 p-8 " onMouseLeave={handleOutTender} onMouseEnter={handleTender}>
-            <ul className="flex flex-col gap-2">
-              <li><Link href={'/tenders'}>FY-2022/2024</Link></li>
-              <li><Link href={'/tenders'}>FY-2021/2022</Link></li>
-              <li><Link href={'/tenders'}>FY-2020/2021</Link></li>
-            </ul>
-          </div>
-        )
-      }
-
+      <section className="block lg:hidden relative">
+        <p onClick={handleShowingLinksMobile} className="text-4xl cursor-pointer text-sky-600">{showLinksMobile ? <FaRegWindowClose /> : <IoMenu /> }</p>
+        { showLinksMobile && (
+          <ul className="absolute flex flex-col z-10 bg-sky-300 py-6">
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/'}>Home</Link></li>
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/about'}>About</Link></li>
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/courses'}>Courses</Link></li>
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/gallery'}>Gallery</Link></li>
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/staff'}>Staff</Link></li>
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/tender'}>Tender</Link></li>
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/downloads'}>Downloads</Link></li>
+            <li><Link onClick={() => setShowLinksMobile(false)} href={'/contact'}>Contact</Link></li>
+          </ul>
+        )}
+      </section>
     </div>
   );
 };

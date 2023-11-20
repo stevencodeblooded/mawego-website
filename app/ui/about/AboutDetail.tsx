@@ -8,8 +8,8 @@ import { SiWelcometothejungle } from 'react-icons/si'
 
 const AboutDetail = () => {
   return (
-    <div className="flex flex-col my-10">
-      <div className="flex items-center my-10 gap-6">
+    <div className="flex flex-col my-10 px-2 ">
+      <div className="flex flex-col items-center my-10 gap-6 ">
         <Image src={aboutImage} alt="about image" height={300} width={550} />
         <div>
           <h1 className="text-5xl text-sky-400 font-bold mb-3"><span className="flex"><SiWelcometothejungle />elcome</span></h1>
@@ -40,7 +40,7 @@ const AboutDetail = () => {
         </div>
       </div>
 
-      <div className="flex items-center my-10">
+      <div className="lg:flex lg:items-center lg:my-10">
         <div>
           <h2 className="text-5xl text-sky-400 font-bold mb-3">Our Legacy of Excellence...</h2>
           <p className="text-sm mb-4">
@@ -61,8 +61,8 @@ const AboutDetail = () => {
         <Image src={aboutImage2} alt="Second About Us Image" height={300} width={550} />
       </div>
 
-      <div className="my-10">
-        <h1 className="text-center text-5xl text-sky-400 font-bold mb-4">Ready to embark on your journey to success with us?</h1>
+      <div className="my-10 py-2">
+        <h1 className="text-center text-5xl text-sky-400 font-bold mb-4" >Ready to embark on your journey to success with us?</h1>
         <div className="flex justify-between items-center gap-3">
           <div>
             <p className="text-lg mb-4">Join us in shaping a brighter future. Explore, learn, and be inspired.</p>

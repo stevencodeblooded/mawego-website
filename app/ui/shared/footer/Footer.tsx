@@ -4,7 +4,7 @@ import { MdMarkEmailRead } from "react-icons/md";
 
 const Footer = () => {
   return (
-      <div className="flex justify-between py-8 px-2">
+      <div className="flex flex-wrap justify-between py-8 px-2 gap-2.5">
         
         <div className="flex gap-2">
           <div className="text-3xl ">
