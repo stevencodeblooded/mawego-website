@@ -63,7 +63,7 @@ const AboutDetail = () => {
 
       <div className="my-10 py-2">
         <h1 className="text-center text-5xl text-sky-400 font-bold mb-4" >Ready to embark on your journey to success with us?</h1>
-        <div className="flex justify-between items-center gap-3">
+        <div className="grid text-center md:flex md:items-center md:gap-2">
           <div>
             <p className="text-lg mb-4">Join us in shaping a brighter future. Explore, learn, and be inspired.</p>
           </div>

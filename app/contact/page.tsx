@@ -1,7 +1,13 @@
-const Contact = () => {
+import Form from "../ui/contact/Form"
+import Support from "../ui/contact/Support"
+
+const page = () => {
   return (
-    <div>Contact</div>
+    <div>
+      <Support />
+      <Form />
+    </div>
   )
 }
 
-export default Contact
+export default page

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="flex flex-wrap justify-between py-8 px-2 gap-2.5">
         
         <div className="flex gap-2">
-          <div className="text-3xl ">
+          <div className="text-3xl bg-sky-300 rounded-lg p-1">
             <FaLocationDot />
           </div>
           <section className="flex flex-col gap-1">
@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-2">
-          <div className="text-3xl ">
+          <div className="text-3xl bg-sky-300 rounded-lg p-1">
             <BsFillTelephonePlusFill />
           </div>
           <section className="flex flex-col gap-1">
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-2 ">
-          <div className="text-3xl ">
+          <div className="text-3xl bg-sky-300 rounded-lg p-1 ">
             <MdMarkEmailRead />
           </div>
           <section className="flex flex-col gap-1">
